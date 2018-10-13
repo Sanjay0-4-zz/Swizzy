@@ -1,0 +1,24 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div class="example-container">
+  <div>
+    <img id="image" src="./assets/login_img.jpg">
+    <h1 id="loginTxt">Login</h1>
+    <h4>or <a href="/sign-up">create an account</a></h4>
+  </div>
+  <form>
+  <div class="formFieldDiv">
+    <mat-form-field>
+      <input type="text" matInput placeholder="Email" formControlName="email">
+    </mat-form-field>
+  </div>
+
+  <div class="formFieldDiv">
+    <mat-form-field>
+        <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="password">
+      <mat-icon id="icon" matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </mat-form-field>
+  </div>
+
+  <button mat-button routerLink="/home">Login</button>
+</form>
+</div>

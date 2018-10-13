@@ -1,0 +1,197 @@
+<div>
+  <div>
+    <mat-toolbar color="primary">
+      <span><img src="./assets/swizzylogo.png" style="width: 20%; height: 40px;"></span>
+      <span class="tool"></span>
+      <span class="toolbar">
+        <button mat-button routerLink="/index">Signout</button>
+      </span>
+
+    </mat-toolbar>
+  </div>
+
+  <br>
+  <br>
+  <div id="restrodetails">
+    <div id="details">
+      <div>
+        <h1> {{restaurant.restaurantName}} </h1>
+        <img src="./assets/restaurant1.jpg" alt="restaurant Img">
+        <div> <span> Address: </span>
+          <span>
+            <h3> {{restaurant.restaurantAddress}} </h3>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div id="menu">
+      <div id="menuhead">
+        <span> Select </span>
+        <span> Item </span>
+        <span>Price</span>
+      </div>
+      <hr>
+      <table id="menutable">
+        <tr>
+          <td>
+            <mat-checkbox [(ngModel)]="item1"></mat-checkbox>
+          </td>
+          <td> {{items[0].itemName}} </td>
+          <td> {{items[0].itemPrice}} </td>
+        </tr>
+
+        <tr>
+          <td>
+            <mat-checkbox [(ngModel)]="item2"></mat-checkbox>
+          </td>
+          <td> {{items[1].itemName}} </td>
+          <td> {{items[1].itemPrice}} </td>
+        </tr>
+
+        <tr>
+          <td>
+            <mat-checkbox [(ngModel)]="item3"></mat-checkbox>
+          </td>
+          <td> {{items[2].itemName}} </td>
+          <td> {{items[2].itemPrice}} </td>
+        </tr>
+
+        <tr>
+          <td>
+            <mat-checkbox [(ngModel)]="item4"></mat-checkbox>
+          </td>
+          <td> {{items[3].itemName}} </td>
+          <td> {{items[3].itemPrice}} </td>
+        </tr>
+
+        <tr>
+          <td>
+            <mat-checkbox [(ngModel)]="item5"></mat-checkbox>
+          </td>
+          <td> {{items[4].itemName}} </td>
+          <td> {{items[4].itemPrice}} </td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="checkout">
+      <div id="checkouthead">
+        <span> Quantity </span>
+        <span> Item </span>
+        <span>Price</span>
+      </div>
+      <hr>
+      <table id="checkouttable">
+        <tr *ngIf="item1">
+          <td class="qty"> <button (click)="btnqty1inc()">+</button> {{qty1}} <button (click)="btnqty1dec()">-</button>
+          </td>
+          <td> {{items[0].itemName}} </td>
+          <td> {{items[0].itemPrice * qty1}} </td>
+        </tr>
+
+        <tr *ngIf="item2">
+          <td class="qty"> <button (click)="btnqty2inc()">+</button> {{qty2}} <button (click)="btnqty2dec()">-</button>
+          </td>
+          <td> {{items[1].itemName}} </td>
+          <td> {{items[1].itemPrice * qty2}} </td>
+        </tr>
+
+        <tr *ngIf="item3">
+          <td class="qty"> <button (click)="btnqty3inc()">+</button> {{qty3}} <button (click)="btnqty3dec()">-</button>
+          </td>
+          <td> {{items[2].itemName}} </td>
+          <td> {{items[2].itemPrice * qty3}} </td>
+        </tr>
+
+        <tr *ngIf="item4">
+          <td class="qty"> <button (click)="btnqty4inc()">+</button> {{qty4}} <button (click)="btnqty4dec()">-</button>
+          </td>
+          <td> {{items[3].itemName}} </td>
+          <td> {{items[3].itemPrice * qty4}} </td>
+        </tr>
+
+        <tr *ngIf="item5">
+          <td class="qty"> <button (click)="btnqty5inc()">+</button> {{qty5}} <button (click)="btnqty5dec()">-</button>
+          </td>
+          <td> {{items[4].itemName}} </td>
+          <td> {{items[4].itemPrice * qty5}} </td>
+        </tr>
+
+        <tr>
+          <td>
+            <mat-checkbox [(ngModel)]="ordertotal"></mat-checkbox>
+          </td>
+          <td> Confirm Order</td>
+        </tr>
+        <tr *ngIf="ordertotal">
+          <td>Total: </td>
+          <td> {{(items[0].itemPrice*qty1) + (items[1].itemPrice*qty2) + (items[2].itemPrice*qty3) +
+            (items[3].itemPrice*qty4) + (items[4].itemPrice*qty5)}} </td>
+        </tr>
+      </table>
+
+      <div id="checkoutbtndiv">
+        <button mat-button (click)="toggle()" id="checkoutbtn">checkout</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div *ngIf="formFlag">
+  <mat-horizontal-stepper #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <div>
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>Enter your Address </ng-template>
+          <mat-form-field>
+            <input matInput placeholder="Door/Floor Number" formControlName="Floor" required>
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <input matInput placeholder="Landmark" formControlName="Locality" required>
+          </mat-form-field>
+        </form>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <div>
+          <button id="pay_button" mat-button>Paytm</button><br>
+          <button id="pay_button" mat-button>Credit/Debit Cards</button><br>
+          <button id="pay_button" mat-button>Net Banking</button><br>
+          <button id="pay_button" mat-button>Cash On Delievery</button><br>
+        </div>
+        <ng-template matStepLabel>Payment</ng-template>
+      </form>
+      <br>
+      <br>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      You are now done.
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset(stepper)">Reset</button>
+      </div>
+      <div>
+        <mat-checkbox [(ngModel)]="mapsts">Track Order</mat-checkbox>
+      </div>
+    </mat-step>
+
+  </mat-horizontal-stepper>
+
+  <div *ngIf="mapsts">
+    <agm-map [latitude]="lat" [longitude]="lng" (mapClick)="onChoseLocation($event)">
+      <agm-marker [latitude]="lat" [longitude]="lng" *ngIf="locationChosen"></agm-marker>
+    </agm-map>
+  </div>
+</div>

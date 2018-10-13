@@ -1,0 +1,50 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+    min-width: 150px;
+  }
+
+  mat-form-field{
+    border: none;
+    outline: 0;
+    width: 100%;
+  }
+
+  .example-container > * {
+    width: 100%;
+  }
+  a{
+    text-decoration: none;
+    color: orange;
+    font-weight: bolder;
+  }
+  body { 
+    margin: 0;
+    font-family: ProximaNova,Arial,Helvetica Neue,sans-serif;
+  }
+  
+  .basic-container {
+    padding: 30px;
+  }
+
+  button{
+    background-color: orange;
+    color: white;
+    font-weight: bolder;
+    width: 50%;
+    border-radius: 5px;
+  }
+
+  #image{
+    height: 40%;
+    width: 25%;
+    float: right;
+    border-radius: 100px;
+  }
+#icon{
+    cursor: pointer;
+}

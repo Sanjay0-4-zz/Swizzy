@@ -1,0 +1,61 @@
+<div id="main">
+
+  <div id="restrolist">
+    <h2>Restaurants</h2>
+    <button mat-button (click)="bkDetails()" [routerLink]="['/rest-details', restaurant.restaurantId]">Burger King</button>
+    <button mat-button (click)="ddDetails()" [routerLink]="['/rest-details', restaurant.restaurantId]">Dunkin Donuts</button>
+    <button mat-button (click)="kkhDetails()" [routerLink]="['/rest-details', restaurant.restaurantId]">Kake Di Hatti</button>
+    <button mat-button (click)="hDetails()" [routerLink]="['/rest-details', restaurant.restaurantId]">Haldiram's</button>
+    <button mat-button (click)="dDetails()" [routerLink]="['/rest-details', restaurant.restaurantId]">Domino's</button>
+  </div>
+
+  <div id="carddiv">
+    <mat-card class="example-card">
+      <img mat-card-image src="./assets/food1.jpeg" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <h3>Shahi Mutton</h3>
+        <p>Indian mughlai chinease</p>
+        77 min . $300 for Two
+      </mat-card-content>
+
+      <mat-card-actions>
+        50% off on all foods
+      </mat-card-actions>
+    </mat-card>
+
+    <mat-card class="example-card">
+      <img mat-card-image src="./assets/food6.jpeg" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <h3>Masala Dosa</h3>
+        <p>Indian mughlai chinease</p>
+        77 min . $300 for Two
+      </mat-card-content>
+      <mat-card-actions>
+        50% off on all foods
+      </mat-card-actions>
+    </mat-card>
+
+    <mat-card class="example-card1">
+      <img mat-card-image src="./assets/food3.jpeg" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <h3>Hot Chocolate</h3>
+        <p>Indian mughlai chinease</p>
+        77 min . $300 for Two
+      </mat-card-content>
+ 
+    </mat-card>
+
+    <mat-card class="example-card1">
+      <img mat-card-image src="./assets/food6.jpeg" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <h3>Masala Dosa</h3>
+        <p>Indian mughlai chinease</p>
+        77 min . $300 for Two
+      </mat-card-content>
+      <mat-card-actions>
+        50% off on all foods
+      </mat-card-actions>
+    </mat-card>
+
+  </div>
+</div>

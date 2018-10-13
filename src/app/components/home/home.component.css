@@ -1,0 +1,52 @@
+.toolbar{
+    margin: 0px 5px 0px 5px;
+}
+#toptoolbar{
+    width: 100%;
+}
+#restrolist{
+    width: 30%;
+    height: 450px;
+    border-right: 2px solid orangered;
+    float: left;
+    /* border: 2px solid black; */
+}
+mat-list-item{
+    border: 2px solid gray;
+    width: 30%;
+}
+#restrolist button{
+    background-color: white;
+    border: 0;
+    width: 100%;
+    height: 20%;
+    font-size: 20pt;
+}
+button .hover{
+    background-color: grey;
+}
+
+.example-card {
+    max-width: 250px;
+    margin: 20px auto 0px auto;
+float: left;
+  }
+  .example-card1 {
+    max-width: 250px;
+    margin: 20px auto 0px auto;
+    float: right;
+
+  }
+  .example-header-image {
+    background-image: url('shiba2.jpg');
+    background-size: cover;
+  }
+  
+#card2{
+    padding-right: 20px;
+}
+
+h2{
+    margin-left: auto; 
+    margin-right: auto;
+}
