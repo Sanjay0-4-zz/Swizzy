@@ -1,6 +1,6 @@
 # Swizzy
 Online food order web application.  
-In this project we’re going to be building an online fast-food ordering application, like Swiggy
+In this project we’re going to be build an online fast-food ordering application, like Swiggy
   
 ### Technologies used  
   
